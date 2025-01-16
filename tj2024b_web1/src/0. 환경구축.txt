@@ -1,0 +1,39 @@
+[ JSP/서블릿 프로젝트 준비 ]
+	1. 자바 설치 p.33 ~ p.34
+		자바 설치 확인 java -version
+		
+	2. 아파치 톰캣 설치 p.37
+		1. https://tomcat.apache.org/download-10.cgi
+		2.
+		* 강의기준 : 아파치 톰캣 v10.1
+		* 시작표시줄에 아파치 톰캣이 실행중이라면 '종료' 
+		* ctrl + alt + delete(작업관리자) --> 백그라운드 프로세스 --> 톰캣 강제종료
+	
+	3. 이클립스 설치 : p.38
+		- Eclipse IDE for Enterprice Java and Web Developers ,
+		
+	4. 이클립스에 톰캣 서버 가져오기(연동) p.40
+		1. [FILE] -> [NEW] -> [OTHER] -> wizards : server 입력 후 [server] 클릭 -> [next] ->
+		2. [apache] 폴더 'Tomcat v10.1 Server' -> [next] -> 'tomcat installation directory' 에 설치된 톰캣 폴더 경로 넣어준다.
+		3. [finish]
+		* 이클립스 하단에 [servers] 탭 확인 ,
+			1. 서버 목록을 확인할 수 있다.
+			2. 특정 서버명을 더블클릭 하면 옵션 창이 나온다.
+				*[PORT]
+					80080 설정
+					
+* 프로젝트 구조도
+	1. 프로젝트명
+		2. src 폴더
+			3. main 폴더
+				4. java 폴더 ( 주로 백엔드파일 : JAVA / 서블릿 파일 )
+				4. webapp 폴더 ( 주로 프론트파일 : HTML,CSS,JS,IMG / JSP 등 )
+					5. WEB-INF : 웹 설정 파일
+						6. lib : 프로젝트 사용할 외부 라이브러리들 .jar 파일들을 넣어두는 곳 ( JDBC )
+						6. web.xml : HTTP 통신이 서블릿과 매핑/연결할 수 있도록 설정 파일
+		
+	 [규칙]
+		 * 모든 프론트파일은 무조건 webapp 폴더 아래에 존재해야한다. WEB-INF 또는 META-INF 에는 넣지 않는다.
+		 * 모든 백엔드파일은 무조건 java 폴더 아래에 존재해야한다.
+		 	-> 서버가 파일들을 못찾는다.. 경로 규칙은 지켜야한다.
+	
