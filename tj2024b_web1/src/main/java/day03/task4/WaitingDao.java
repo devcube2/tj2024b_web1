@@ -56,11 +56,12 @@ public class WaitingDao {
 		ArrayList<WaitingDto> list = new ArrayList<WaitingDto>();
 		
 		try {
-			String sql = "select telno, count from waiting";
+			String sql = "select no, telno, count from waiting";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				WaitingDto waitingDto = new WaitingDto();
+				waitingDto.setNo(rs.getInt("no"));
 				waitingDto.setTelNo(rs.getString("telno"));
 				waitingDto.setCount(rs.getInt("count"));
 				list.add(waitingDto);

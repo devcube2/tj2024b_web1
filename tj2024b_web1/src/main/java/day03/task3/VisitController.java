@@ -21,9 +21,16 @@ public class VisitController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {		
 		VisitDto visitDto = mapper.readValue(req.getReader(), VisitDto.class);
+//		try {
+//			Thread.sleep(5000);			
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		// 2. DAO 처리
 		boolean result = VisitDao.getInstance().write(visitDto);
 		// 3. DAO 결과를 HTTP HEADER BODY(본문)으로 응답(response) 보내기
+		
 		resp.setContentType("application/json");
 		resp.getWriter().print(result);
 	}

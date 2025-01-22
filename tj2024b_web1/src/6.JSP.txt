@@ -1,0 +1,14 @@
+[ JSP ]
+	1. 정의 : Java Server Page 로 동적 페이지
+	2. 역활 : HTML 과 JAVA 언어를 하나의 페이지 작성 가능.
+		-> 확장자 : .jsp ,
+		-> MVC1 패턴
+	3. JSP 비슷한 템플릿
+		1. JSP(java) 2.타임리프(spring) 3.react(페이스북)
+	4. 문법
+		1. <jsp:include page = "포함할파일경로.jsp">
+			-> HTML 언어는 html 안에 html 포함하는 기술 지원하지 않는다.
+			-> 경로
+				1. 파일명.jsp : 현재 jsp 와 불러올 jsp 파일이 같은 폴더내 존재했을때.
+				2. /패키지명/파일명.jsp : 현재 jsp 와 불러올 jsp파일이 다른 폴더내 존재했을떄.
+					-> 프로젝트내 (webapp) 이하 경로부터 위치를 작성해야한다.
