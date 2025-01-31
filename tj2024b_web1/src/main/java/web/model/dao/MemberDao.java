@@ -13,14 +13,14 @@ public class MemberDao extends Dao {
 	// + 싱글톤
 	@Getter
 	private static MemberDao instance = new MemberDao();
-	
+
 //	1. 회원가입
 	public boolean signUp(MemberDto memberDto) {
 		try {
 //			[1] SQL 작성한다
-			String sql = "insert into member( mid , mpwd , mname , mphone )	" + "values( '" + memberDto.getMid()
+			String sql = "insert into member( mid , mpwd , mname , mphone , mimg)	" + "values( '" + memberDto.getMid()
 					+ "' , '" + memberDto.getMpwd() + "' , '" + memberDto.getMname() + "' , '" + memberDto.getMphone()
-					+ "' )";
+					+ "' , '" + memberDto.getMimg() + "' )";
 //			[2] DB와 연동된 곳에 SQL 기재한다.	- 연동된 db에 sql 기재하는 방법 : conn.prepareStatement( SQL )
 			PreparedStatement ps = conn.prepareStatement(sql);
 //			[3] 기재된 SQL실행하고 결과를 받는다. 	- 기재된 sql을 실행하는 방법 : ps.executeUpdate()
@@ -34,7 +34,7 @@ public class MemberDao extends Dao {
 		}
 		return false;
 	} // f end
-	
+
 //	2. 로그인
 	public int logIn(MemberDto memberDto) {
 //		int : SQL로 조회된 회원번호를 반환하기 위해서
@@ -132,7 +132,7 @@ public class MemberDao extends Dao {
 				System.out.println("!! 회원탈퇴실패 !!");
 			}
 		} catch (SQLException e) {
-			System.out.println(e); 
+			System.out.println(e);
 		}
 		return false;
 	} // f end

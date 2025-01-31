@@ -26,7 +26,6 @@ public class WaitingController extends HttpServlet {
 		int 대기번호 = (Integer) map.get("대기번호");
 		String 전화번호 = map.get("전화번호").toString();
 		int 인원수 = (Integer) map.get("인원수");
-		System.out.printf("대기번호: %d , 전화번호: %s , 인원수: %d\n", 대기번호, 전화번호, 인원수);
 
 		resp.setContentType("application/json");
 
