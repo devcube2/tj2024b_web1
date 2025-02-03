@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.header_logo {
+	width: 50px;
+}
+
+/* 눈누 폰트 */
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 전체 폰트적용 */
+* {
+	font-family: 'yg-jalnan';
+}
+
+/* header member profile */
+
+.header_profile {
+	/* 고정 크기일때 사이즈 비율 깨짐 */
+	width: 70px;
+	height: 70px;
+	border-radius: 30px;
+	border: 1px solid #e8e8e8;
+	object-fit: cover;
+}

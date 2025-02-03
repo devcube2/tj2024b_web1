@@ -44,6 +44,8 @@ public class LoginController extends HttpServlet {
 	// [ 로그아웃 ]
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("login DELETE..");
+		
 		// 1. [ HTTP 요청의 header body 자료(JSON)를 자바(DTO)로 받는다. ]
 		// 2. [ 데이터 유효성 검사 ]
 		// 3. [ DAO 에게 데이터 전달 하고 응답 받기 ]

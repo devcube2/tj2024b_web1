@@ -99,7 +99,7 @@ public class MemberDao extends Dao {
 //	5. 내정보조회 SQL 처리 메소드
 	public MemberDto myInfo(int logInMno) {
 		try {
-			String sql = "select mno, mid , mname , mphone , mdate from member where mno = ?";
+			String sql = "select mno, mid , mname , mphone , mdate , mimg from member where mno = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, logInMno);
 			ResultSet rs = ps.executeQuery();
@@ -110,6 +110,7 @@ public class MemberDao extends Dao {
 				result.setMname(rs.getString("mname"));
 				result.setMphone(rs.getString("mphone"));
 				result.setMdate(rs.getString("mdate"));
+				result.setMimg(rs.getString("mimg"));
 				return result;
 			}
 		} catch (SQLException e) {
